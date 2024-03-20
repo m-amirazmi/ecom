@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import { HeaderProps } from "@/types/header.types";
-import { ArrowRightFromLine } from "lucide-react";
+import { ArrowRightFromLine, Bell, Settings } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function Header({ sidebarWidth, handleSidebar }: HeaderProps) {
   return (
@@ -19,8 +20,30 @@ export default function Header({ sidebarWidth, handleSidebar }: HeaderProps) {
         >
           {sidebarWidth === 0 && <ArrowRightFromLine size={18} />}
         </Button>
-        <div className="ml-auto">
-          <ThemeToggle />
+        <div className="ml-auto items-center flex">
+          <div>
+            <ThemeToggle />
+            <Button size="icon" variant="ghost">
+              <Bell size={18} />
+            </Button>
+            <Button size="icon" variant="ghost">
+              <Settings size={18} />
+            </Button>
+          </div>
+          <Button variant="ghost" className="flex items-center gap-2">
+            <div className="cursor-pointer">
+              <Image
+                src="/images/avatar.webp"
+                alt="avatar"
+                width={22}
+                height={22}
+                className="rounded-full"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-md">Muhamad Amir</span>
+            </div>
+          </Button>
         </div>
       </div>
     </div>
