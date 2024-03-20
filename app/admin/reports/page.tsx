@@ -1,8 +1,8 @@
-export default function Dashboard() {
+export default function Reports() {
   return (
     <div className="h-full">
       <div className="flex items-center justify-center w-full h-[800px] text-2xl">
-        Dashboard | WIP
+        Reports | WIP
       </div>
     </div>
   );

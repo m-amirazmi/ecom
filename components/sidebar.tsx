@@ -1,6 +1,8 @@
+import { sidebarLinks } from "@/lib/sidebar-links-list";
 import { cn } from "@/lib/utils";
 import { SidebarProps } from "@/types/sidebar.types";
 import { ArrowLeftFromLine } from "lucide-react";
+import SidebarLinks from "./sidebar-links";
 import { Button } from "./ui/button";
 
 export default function Sidebar({
@@ -29,6 +31,11 @@ export default function Sidebar({
         >
           {sidebarWidth > 0 && <ArrowLeftFromLine size={18} />}
         </Button>
+      </div>
+      <div className="pt-6 pr-6 pb-6 pl-6">
+        <div className="flex flex-col gap-2">
+          <SidebarLinks links={sidebarLinks} />
+        </div>
       </div>
     </div>
   );
