@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1710825727674,
+      "tag": "0000_productive_maria_hill",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1710825768526,
+      "tag": "0001_first_the_anarchist",
+      "breakpoints": true
+    }
+  ]
+}
