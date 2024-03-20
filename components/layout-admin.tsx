@@ -1,9 +1,15 @@
 "use client";
 
+import { LayoutProps } from "@/types/layout.types";
+import {
+  MoveLeft,
+  MoveRight,
+  PanelLeftClose,
+  PanelLeftOpen,
+} from "lucide-react";
 import { useState } from "react";
 import Sidebar from "./sidebar";
-import { Button } from "./ui/button";
-import { LayoutProps } from "@/types/layout.types";
+import Header from "./header";
 
 const sideWidth = 280;
 
@@ -16,13 +22,19 @@ export default function LayoutAdmin({ children }: LayoutProps) {
   };
   return (
     <main>
-      <Sidebar sideWidth={sideWidth} sidebarWidth={sidebarWidth} />
-      <div
-        className="bg-accent min-h-screen w-full transition-all duration-500 ease-out"
-        style={{ paddingLeft: sidebarWidth + 24 }}
-      >
-        <Button onClick={handleSidebar}>Hide</Button>
-        {children}
+      <Sidebar
+        sideWidth={sideWidth}
+        sidebarWidth={sidebarWidth}
+        handleSidebar={handleSidebar}
+      />
+      <div className="bg-accent dark:bg-background min-h-screen transition-all duration-500 ease-out">
+        <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
+        <div
+          className="pt-16 transition-all duration-500 ease-out"
+          style={{ paddingLeft: sidebarWidth }}
+        >
+          <div className="p-8">{children}</div>
+        </div>
       </div>
     </main>
   );

@@ -1,5 +1,4 @@
-export interface SidebarProps {
-  sideWidth: number;
+export interface HeaderProps {
   sidebarWidth: number;
   handleSidebar: () => void;
 }
