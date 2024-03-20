@@ -27,7 +27,7 @@ export default function LayoutAdmin({ children }: LayoutProps) {
         sidebarWidth={sidebarWidth}
         handleSidebar={handleSidebar}
       />
-      <div className="bg-accent dark:bg-background min-h-screen transition-all duration-500 ease-out">
+      <div className="bg-background min-h-screen transition-all duration-500 ease-out">
         <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
         <div
           className="pt-16 transition-all duration-500 ease-out"

@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { SidebarProps } from "@/types/sidebar.types";
 import { ArrowLeftFromLine } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function Sidebar({
   sideWidth,
@@ -10,19 +11,24 @@ export default function Sidebar({
   return (
     <div
       className={cn(
-        "fixed h-screen shadow-lg bg-background dark:bg-accent top-0 transition-transform duration-500 ease-out z-10",
+        "fixed h-screen border-r border-border/40 bg-background top-0 transition-transform duration-500 ease-out z-10",
         sidebarWidth > 0 ? "translate-x-0" : "-translate-x-full"
       )}
       style={{ width: sideWidth }}
     >
-      <div className="h-16 border-b border-b-gray-500/20 flex items-center px-6 ">
+      <div className="h-16 border-b border-border/40 flex items-center pl-6 pr-4">
         <div className="text-2xl">NextJS Ecom</div>
-        <button
-          className="ml-auto text-slate-300 hover:text-primary transition-colors ease-out "
+        <Button
+          variant="ghost"
+          size="icon"
+          className={cn(
+            "ml-auto",
+            sidebarWidth > 0 ? "opacity-100" : "opacity-0"
+          )}
           onClick={handleSidebar}
         >
-          {sidebarWidth > 0 && <ArrowLeftFromLine />}
-        </button>
+          {sidebarWidth > 0 && <ArrowLeftFromLine size={18} />}
+        </Button>
       </div>
     </div>
   );
