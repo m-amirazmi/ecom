@@ -29,14 +29,14 @@ export default function LayoutAdmin({ children }: LayoutProps) {
       />
       <div
         className={cn(
-          "block bg-background min-h-screen transition-all duration-500 ease-out md:blur-none",
+          "relative block bg-background min-h-screen transition-all duration-500 ease-out md:blur-none",
           sidebarWidth > 0 ? "blur-sm" : "blur-none"
         )}
         onClick={sidebarWidth > 0 ? handleSidebar : () => {}}
       >
         <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
         <div
-          className="pt-16 transition-all duration-500 ease-out"
+          className="transition-all duration-500 ease-out"
           style={{ paddingLeft: !isMobile ? sidebarWidth : 0 }}
         >
           <div className="p-8">{children}</div>
