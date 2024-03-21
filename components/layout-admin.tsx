@@ -1,7 +1,7 @@
 "use client";
 
 import { LayoutProps } from "@/types/layout.types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useWindowSize } from "@react-hook/window-size/throttled";
 import Header from "./header";
 import Sidebar from "./sidebar";
@@ -14,6 +14,11 @@ export default function LayoutAdmin({ children }: LayoutProps) {
 
   const [width] = useWindowSize();
   const isMobile = width < 768;
+
+  useEffect(() => {
+    if (isMobile) setSidebarWidth(0);
+    else setSidebarWidth(sideWidth);
+  }, [isMobile]);
 
   const handleSidebar = () => {
     if (sidebarWidth > 0) setSidebarWidth(0);
@@ -32,7 +37,7 @@ export default function LayoutAdmin({ children }: LayoutProps) {
           "relative block bg-background min-h-screen transition-all duration-500 ease-out md:blur-none",
           sidebarWidth > 0 ? "blur-sm" : "blur-none"
         )}
-        onClick={sidebarWidth > 0 ? handleSidebar : () => {}}
+        onClick={isMobile && sidebarWidth > 0 ? handleSidebar : () => {}}
       >
         <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
         <div

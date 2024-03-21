@@ -15,13 +15,14 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
     <B>
       <BreadcrumbList>
         {items.map((i, k) => {
-          const BreadcrumbTag = i.link ? BreadcrumbLink : BreadcrumbPage;
           return (
             <Fragment key={k}>
               <BreadcrumbItem>
-                <BreadcrumbTag asChild>
-                  {i.link ? <Link href={i.link}>{i.label}</Link> : i.label}
-                </BreadcrumbTag>
+                {i.link ? (
+                  <Link href={i.link}>{i.label}</Link>
+                ) : (
+                  <BreadcrumbPage>{i.label}</BreadcrumbPage>
+                )}
               </BreadcrumbItem>
               {k <= items.length - 2 && <BreadcrumbSeparator />}
             </Fragment>
