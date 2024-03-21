@@ -42,9 +42,6 @@ export default function LayoutAdmin({ children }: LayoutProps) {
           <div className="p-8">{children}</div>
         </div>
       </div>
-      <div className="md:hidden h-screen w-full flex items-center justify-center">
-        <p className="text-2xl">Mobile View WIP</p>
-      </div>
     </>
   );
 }
