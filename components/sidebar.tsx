@@ -39,8 +39,8 @@ export default function Sidebar({
           <SidebarLinks links={sidebarLinks} handleSidebar={handleSidebar} />
         </div>
       </div>
-      <Separator className="bg-border/40" />
-      <div className="px-4 md:px-8 py-4 flex items-center ">
+      <Separator className="md:hidden bg-border/40" />
+      <div className="md:hidden px-4 md:px-8 py-4 flex items-center ">
         <Button size="icon" variant="ghost">
           <Settings size={18} />
         </Button>
