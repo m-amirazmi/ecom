@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Fragment } from "react";
 
 export default function Breadcrumb({ items }: BreadcrumbProps) {
   return (
@@ -15,12 +16,12 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
         {items.map((i, k) => {
           const BreadcrumbTag = i.link ? BreadcrumbLink : BreadcrumbPage;
           return (
-            <>
-              <BreadcrumbItem key={i.label}>
+            <Fragment key={k}>
+              <BreadcrumbItem>
                 <BreadcrumbTag href={i.link}>{i.label}</BreadcrumbTag>
               </BreadcrumbItem>
               {k <= items.length - 2 && <BreadcrumbSeparator />}
-            </>
+            </Fragment>
           );
         })}
       </BreadcrumbList>

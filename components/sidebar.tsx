@@ -1,9 +1,11 @@
 import { sidebarLinks } from "@/lib/sidebar-links-list";
 import { cn } from "@/lib/utils";
 import { SidebarProps } from "@/types/sidebar.types";
-import { ArrowLeftFromLine } from "lucide-react";
+import { ArrowLeftFromLine, Bell, Settings } from "lucide-react";
 import SidebarLinks from "./sidebar-links";
 import { Button } from "./ui/button";
+import { ThemeToggle } from "./theme-toggle";
+import { Separator } from "./ui/separator";
 
 export default function Sidebar({
   sideWidth,
@@ -14,8 +16,7 @@ export default function Sidebar({
     <div
       className={cn(
         "fixed h-screen border-r border-border/40 bg-background top-0 transition-transform duration-500 ease-out z-10",
-        sidebarWidth > 0 ? "translate-x-0" : "-translate-x-full",
-        "md:block hidden"
+        sidebarWidth > 0 ? "translate-x-0" : "-translate-x-full"
       )}
       style={{ width: sideWidth }}
     >
@@ -37,6 +38,16 @@ export default function Sidebar({
         <div className="flex flex-col gap-2">
           <SidebarLinks links={sidebarLinks} />
         </div>
+      </div>
+      <Separator className="bg-border/40" />
+      <div className="px-8 py-4 flex items-center ">
+        <Button size="icon" variant="ghost">
+          <Settings size={18} />
+        </Button>
+        <Button size="icon" variant="ghost">
+          <Bell size={18} />
+        </Button>
+        <ThemeToggle />
       </div>
     </div>
   );

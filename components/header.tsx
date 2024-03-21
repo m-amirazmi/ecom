@@ -4,12 +4,15 @@ import { ArrowRightFromLine, Bell, Settings } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { useWindowSize } from "@react-hook/window-size/throttled";
 
 export default function Header({ sidebarWidth, handleSidebar }: HeaderProps) {
+  const [width] = useWindowSize();
+  const isMobile = width < 768;
   return (
     <div
       className="fixed h-16 bg-background border-b border-border/40 w-full transition-all duration-500 ease-out"
-      style={{ paddingLeft: sidebarWidth }}
+      style={{ paddingLeft: !isMobile ? sidebarWidth : 0 }}
     >
       <div className="flex items-center h-full px-6">
         <Button
@@ -21,7 +24,7 @@ export default function Header({ sidebarWidth, handleSidebar }: HeaderProps) {
           {sidebarWidth === 0 && <ArrowRightFromLine size={18} />}
         </Button>
         <div className="ml-auto items-center flex">
-          <div>
+          <div className="hidden md:block">
             <ThemeToggle />
             <Button size="icon" variant="ghost">
               <Bell size={18} />
