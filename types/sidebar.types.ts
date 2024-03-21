@@ -14,4 +14,5 @@ export interface SidebarLink {
 
 export interface SidebarLinksProp {
   links: SidebarLink[];
+  handleSidebar: () => void;
 }

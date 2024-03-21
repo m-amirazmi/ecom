@@ -36,7 +36,7 @@ export default function Sidebar({
       </div>
       <div className="pt-6 pr-6 pb-6 pl-6">
         <div className="flex flex-col gap-2">
-          <SidebarLinks links={sidebarLinks} />
+          <SidebarLinks links={sidebarLinks} handleSidebar={handleSidebar} />
         </div>
       </div>
       <Separator className="bg-border/40" />

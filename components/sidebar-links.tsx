@@ -5,9 +5,15 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useWindowSize } from "@react-hook/window-size/throttled";
 
-export default function SidebarLinks({ links }: SidebarLinksProp) {
+export default function SidebarLinks({
+  links,
+  handleSidebar,
+}: SidebarLinksProp) {
   const pathname = usePathname();
+  const [width] = useWindowSize();
+  const isMobile = width < 768;
 
   return links.map(({ icon: Icon, ...i }) => {
     let isCurrentPage = false;
@@ -22,6 +28,7 @@ export default function SidebarLinks({ links }: SidebarLinksProp) {
           "flex items-center gap-2 justify-start",
           isCurrentPage && "bg-accent"
         )}
+        onClick={isMobile ? handleSidebar : () => {}}
       >
         <Link href={i.link}>
           {Icon && <Icon size={18} />}

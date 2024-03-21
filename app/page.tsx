@@ -1,19 +1,14 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div>
-      <p className="text-4xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed soluta
-        autem, fugit officia iusto magni sunt unde aut voluptate aliquid,
-        reprehenderit earum placeat facere repellendus nam accusamus officiis
-        adipisci ipsam harum! Enim quos, adipisci ipsum nemo itaque fuga totam
-        laudantium ea. Voluptate atque libero deserunt et voluptatem natus, vel
-        consequatur doloremque, labore explicabo asperiores adipisci, quo
-        assumenda ex magnam dolore deleniti dolorum perferendis? Neque cumque
-        at, qui deserunt quibusdam, maxime optio doloribus quas, possimus
-        molestias facilis quasi fuga atque harum corrupti porro dolor velit
-        placeat ad eius cum. Molestias est officia ab architecto nisi sapiente
-        illo optio non laboriosam! Enim?
-      </p>
+    <div className="h-screen w-full flex items-center justify-center flex-col">
+      <p className="text-4xl">Work In Progress...</p>
+      <p className="mt-4">Admin?</p>
+      <Button className="mt-2" variant="outline">
+        <Link href="/admin">Go To Admin</Link>
+      </Button>
     </div>
   );
 }
