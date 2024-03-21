@@ -1,15 +1,9 @@
 "use client";
 
 import { LayoutProps } from "@/types/layout.types";
-import {
-  MoveLeft,
-  MoveRight,
-  PanelLeftClose,
-  PanelLeftOpen,
-} from "lucide-react";
 import { useState } from "react";
-import Sidebar from "./sidebar";
 import Header from "./header";
+import Sidebar from "./sidebar";
 
 const sideWidth = 280;
 
@@ -21,13 +15,13 @@ export default function LayoutAdmin({ children }: LayoutProps) {
     else setSidebarWidth(sideWidth);
   };
   return (
-    <main>
+    <>
       <Sidebar
         sideWidth={sideWidth}
         sidebarWidth={sidebarWidth}
         handleSidebar={handleSidebar}
       />
-      <div className="bg-background min-h-screen transition-all duration-500 ease-out">
+      <div className="hidden md:block bg-background min-h-screen transition-all duration-500 ease-out">
         <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
         <div
           className="pt-16 transition-all duration-500 ease-out"
@@ -36,6 +30,9 @@ export default function LayoutAdmin({ children }: LayoutProps) {
           <div className="p-8">{children}</div>
         </div>
       </div>
-    </main>
+      <div className="md:hidden h-screen w-full flex items-center justify-center">
+        <p className="text-2xl">Mobile View WIP</p>
+      </div>
+    </>
   );
 }

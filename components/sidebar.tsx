@@ -14,7 +14,8 @@ export default function Sidebar({
     <div
       className={cn(
         "fixed h-screen border-r border-border/40 bg-background top-0 transition-transform duration-500 ease-out z-10",
-        sidebarWidth > 0 ? "translate-x-0" : "-translate-x-full"
+        sidebarWidth > 0 ? "translate-x-0" : "-translate-x-full",
+        "md:block hidden"
       )}
       style={{ width: sideWidth }}
     >
