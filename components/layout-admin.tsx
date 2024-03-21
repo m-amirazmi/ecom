@@ -8,7 +8,7 @@ import Sidebar from "./sidebar";
 const sideWidth = 280;
 
 export default function LayoutAdmin({ children }: LayoutProps) {
-  const [sidebarWidth, setSidebarWidth] = useState(sideWidth);
+  const [sidebarWidth, setSidebarWidth] = useState(0);
 
   const handleSidebar = () => {
     if (sidebarWidth > 0) setSidebarWidth(0);
