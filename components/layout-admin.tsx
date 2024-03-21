@@ -39,7 +39,7 @@ export default function LayoutAdmin({ children }: LayoutProps) {
           className="transition-all duration-500 ease-out"
           style={{ paddingLeft: !isMobile ? sidebarWidth : 0 }}
         >
-          <div className="p-8">{children}</div>
+          <div className="p-4 md:p-8">{children}</div>
         </div>
       </div>
     </>

@@ -14,7 +14,7 @@ export default function Header({ sidebarWidth, handleSidebar }: HeaderProps) {
       className="sticky top-0 left-0 h-16 bg-background border-b border-border/40 w-full transition-all duration-500 ease-out"
       style={{ paddingLeft: !isMobile ? sidebarWidth : 0 }}
     >
-      <div className="flex items-center h-full px-6">
+      <div className="flex items-center h-full px-2 md:px-6">
         <Button
           variant="ghost"
           size="icon"

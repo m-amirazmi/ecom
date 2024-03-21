@@ -20,7 +20,7 @@ export default function Sidebar({
       )}
       style={{ width: sideWidth }}
     >
-      <div className="h-16 border-b border-border/40 flex items-center pl-6 pr-4">
+      <div className="h-16 border-b border-border/40 flex items-center pl-6 md:pr-4">
         <div className="text-2xl">NextJS Ecom</div>
         <Button
           variant="ghost"
@@ -34,13 +34,13 @@ export default function Sidebar({
           {sidebarWidth > 0 && <ArrowLeftFromLine size={18} />}
         </Button>
       </div>
-      <div className="pt-6 pr-6 pb-6 pl-6">
+      <div className="pt-2 pr-2 pb-2 pl-2 md:pt-6 md:pr-6 md:pb-6 md:pl-6">
         <div className="flex flex-col gap-2">
           <SidebarLinks links={sidebarLinks} handleSidebar={handleSidebar} />
         </div>
       </div>
       <Separator className="bg-border/40" />
-      <div className="px-8 py-4 flex items-center ">
+      <div className="px-4 md:px-8 py-4 flex items-center ">
         <Button size="icon" variant="ghost">
           <Settings size={18} />
         </Button>

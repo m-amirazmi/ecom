@@ -26,7 +26,7 @@ const breadcrumbs = [
 
 export default function ProductsCreate() {
   return (
-    <div className="h-full flex flex-col gap-8">
+    <div className="h-full flex flex-col gap-4">
       <Breadcrumb items={breadcrumbs} />
       <div>
         <Card className="w-[350px] rounded-none border-border">

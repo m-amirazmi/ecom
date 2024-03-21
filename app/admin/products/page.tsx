@@ -9,15 +9,12 @@ const breadcrumbs = [
 
 export default function Products() {
   return (
-    <div className="h-full flex flex-col gap-8">
+    <div className="h-full flex flex-col gap-4">
       <Breadcrumb items={breadcrumbs} />
-      <div className="">
+      <div>
         <Button variant="outline">
           <Link href="/admin/products/create">Add Product</Link>
         </Button>
-        <div className="flex items-center justify-center w-full h-[800px] text-2xl">
-          Products | WIP
-        </div>
       </div>
     </div>
   );
