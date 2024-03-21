@@ -28,11 +28,11 @@ const breadcrumbs = [
 export default function ProductsCreate() {
   return (
     <div className="h-full flex flex-col gap-4">
-      <h1 className="text-3xl font-bold">Add Product</h1>
       <Breadcrumb items={breadcrumbs} />
+      <h1 className="text-3xl font-bold">Add Product</h1>
 
       <div className="flex flex-col md:flex-row gap-4">
-        <Card className="rounded-none border-border flex-1">
+        <Card className="rounded-none border-border basis-1/2 flex-grow-0 flex-shrink-0">
           <CardHeader>
             <CardTitle>Product information</CardTitle>
             <CardDescription>
@@ -48,6 +48,7 @@ export default function ProductsCreate() {
                     id="name"
                     type="text"
                     placeholder="Enter product name"
+                    className="bg-background"
                   />
                   <span className="text-xs text-muted-foreground">
                     Do not exceed 20 characters for product name.
@@ -60,12 +61,13 @@ export default function ProductsCreate() {
                     type="number"
                     placeholder="Enter product name"
                     step=".01"
+                    className="bg-background"
                   />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="category">Category</Label>
                   <Select>
-                    <SelectTrigger id="category">
+                    <SelectTrigger id="category" className="bg-background">
                       <SelectValue placeholder="Select a category" />
                     </SelectTrigger>
                     <SelectContent position="popper" className="border-border">
@@ -78,32 +80,17 @@ export default function ProductsCreate() {
                   </Select>
                 </div>
                 <div className="flex flex-col space-y-1.5">
-                  <Label htmlFor="brand">Brand</Label>
-                  <Select>
-                    <SelectTrigger id="brand">
-                      <SelectValue placeholder="Select a brand" />
-                    </SelectTrigger>
-                    <SelectContent position="popper" className="border-border">
-                      <SelectItem value="nike">Nike</SelectItem>
-                      <SelectItem value="adidas">Adidas</SelectItem>
-                      <SelectItem value="bata">Bata</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="description">Description</Label>
                   <Textarea
                     id="description"
                     placeholder="Enter product description"
-                    className="h-[120px]"
+                    className="h-[120px] bg-background"
                   />
                 </div>
               </div>
             </form>
           </CardContent>
         </Card>
-
-        {/* <Card className="rounded-none border-border flex-1">Product Image</Card> */}
       </div>
 
       {/* <div>
