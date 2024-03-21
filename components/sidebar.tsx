@@ -26,7 +26,7 @@ export default function Sidebar({
           variant="ghost"
           size="icon"
           className={cn(
-            "ml-auto",
+            "ml-auto md:flex hidden",
             sidebarWidth > 0 ? "opacity-100" : "opacity-0"
           )}
           onClick={handleSidebar}
@@ -48,6 +48,17 @@ export default function Sidebar({
           <Bell size={18} />
         </Button>
         <ThemeToggle />
+        <Button
+          variant="ghost"
+          size="icon"
+          className={cn(
+            "ml-auto flex md:hidden",
+            sidebarWidth > 0 ? "opacity-100" : "opacity-0"
+          )}
+          onClick={handleSidebar}
+        >
+          {sidebarWidth > 0 && <ArrowLeftFromLine size={18} />}
+        </Button>
       </div>
     </div>
   );

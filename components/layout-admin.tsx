@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useWindowSize } from "@react-hook/window-size/throttled";
 import Header from "./header";
 import Sidebar from "./sidebar";
+import { cn } from "@/lib/utils";
 
 const sideWidth = 280;
 
@@ -26,7 +27,13 @@ export default function LayoutAdmin({ children }: LayoutProps) {
         sidebarWidth={sidebarWidth}
         handleSidebar={handleSidebar}
       />
-      <div className="block bg-background min-h-screen transition-all duration-500 ease-out">
+      <div
+        className={cn(
+          "block bg-background min-h-screen transition-all duration-500 ease-out md:blur-none",
+          sidebarWidth > 0 ? "blur-sm" : "blur-none"
+        )}
+        onClick={handleSidebar}
+      >
         <Header sidebarWidth={sidebarWidth} handleSidebar={handleSidebar} />
         <div
           className="pt-16 transition-all duration-500 ease-out"
